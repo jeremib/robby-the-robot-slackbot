@@ -14,7 +14,7 @@ use PhpSlackBot\Bot;
 
 
 $bot = new Bot();
-$bot->setToken('xoxb-24223812897-MlcVJdtnxDRcyu6ronJ10lAd'); // Get your token here https://my.slack.com/services/new/bot
+$bot->setToken(getenv('SLACKBOT_TOKEN')); // Get your token here https://my.slack.com/services/new/bot
 $bot->loadCommand(new \jeremib\Command\TimeCommand());
 $bot->loadCommand(new \jeremib\Command\TeamworkStatusCommand());
 $bot->loadInternalCommands(); // This loads example commands

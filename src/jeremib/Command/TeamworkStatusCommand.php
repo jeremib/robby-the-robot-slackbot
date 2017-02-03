@@ -12,7 +12,7 @@ namespace jeremib\Command;
 class TeamworkStatusCommand extends \PhpSlackBot\Command\BaseCommand
 {
     protected function configure() {
-        $this->setName('tws');
+        $this->setName('Reminder: Remember to update your status: http://my.245.tech/#/statuses/overview');
     }
 
     protected function execute($message, $context) {
@@ -20,6 +20,8 @@ class TeamworkStatusCommand extends \PhpSlackBot\Command\BaseCommand
         foreach($this->getTeamworkStatus() as $response) {
             $this->send($this->getCurrentChannel(), null, $response);
         }
+
+//        $this->send($this->getCurrentChannel(), null, 'http://my.245.tech/#/statuses/overview');
 
     }
 

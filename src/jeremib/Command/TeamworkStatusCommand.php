@@ -26,7 +26,7 @@ class TeamworkStatusCommand extends \PhpSlackBot\Command\BaseCommand
     private function getTeamworkStatus() {
         $return = [];
 
-        $statuses = json_decode(file_get_contents(TEAMWORK_PREFIX . '/people/status.json'));
+        $statuses = json_decode(file_get_contents(getenv('TEAMWORK_PREFIX') . '/people/status.json'));
         foreach($statuses->userStatuses as $user) {
             $return[] = sprintf("*%s*: %s", $user->{"first-name"}, $user->status);
         }
